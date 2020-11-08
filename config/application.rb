@@ -16,6 +16,9 @@ module RubyRussia2020
   class Application < Rails::Application
     config.load_defaults 6.1
 
+    config.i18n.available_locales = %w[en ru]
+    config.i18n.default_locale = :ru
+
     config.generators do |g|
       g.assets false
       g.helper false

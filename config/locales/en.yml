@@ -1,2 +1,4 @@
 en:
-  hello: "Hello world"
+  dashboard:
+    show:
+      title: "Home"
