@@ -1,0 +1,10 @@
+# For more documentation, refer to:
+# https://github.com/Arkweid/lefthook/blob/master/docs/full_guide.md
+#
+pre-commit:
+  parallel: true
+  commands:
+    rubocop:
+      tags: ruby style
+      glob: "*.{rb,rake}"
+      runner: bundle exec rubocop --parallel --force-exclusion {staged_files}

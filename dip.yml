@@ -84,3 +84,4 @@ provision:
   - dip bundle install
   - dip yarn install
   - dip rails db:prepare
+  - cp ./.dockerdev/lefthook-local.yml ./lefthook-local.yml
