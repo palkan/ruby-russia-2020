@@ -8,6 +8,8 @@ gem "pg", "~> 1.0"
 gem "puma", "~> 5.0"
 gem "webpacker"
 
+gem "slim"
+
 gem "bcrypt", "~> 3.1.7"
 
 gem "bootsnap", ">= 1.4.2", require: false

@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title RubyRussiaRocks
+    meta name="viewport" content="width=device-width"
+    = csrf_meta_tags
+    = csp_meta_tag
+    = action_cable_meta_tag
+    = stylesheet_pack_tag "application"
+    = javascript_pack_tag "application", defer: true
+  body
+    .main
+      = yield
