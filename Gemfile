@@ -14,6 +14,8 @@ gem "bootsnap", ">= 1.4.2", require: false
 group :development, :test do
   gem "pry-byebug"
   gem "pry-rails"
+
+  gem "rspec-rails"
 end
 
 group :development do
@@ -22,4 +24,8 @@ group :development do
   gem "standard", "~> 0.8.0"
   gem "rubocop-rspec"
   gem "rubocop-rails"
+end
+
+group :test do
+  gem "test-prof"
 end
