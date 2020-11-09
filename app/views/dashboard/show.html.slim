@@ -1,1 +1,30 @@
 h1 =t(".title")
+
+div
+  h2 =t(".new_releases")
+  ul#new
+    - Album.new_releases.preload(:artist).limit(2).each do |album|
+      li
+        - if album.image_medium
+          = image_tag album.image_medium
+        strong> =album.title
+        = link_to album.artist.name, artist_path(album.artist)
+div
+  - if logged_in?
+    h2 =t(".history")
+    ul#history
+      - current_user.recent_tracks.preload(album: :artist).limit(2).each do |track|
+        li
+          - if track.album.image_medium
+            = image_tag track.album.image_medium
+          strong> =track.title
+          = link_to track.album.artist.name, artist_path(track.album.artist)
+  - else
+    h2 =t(".popular")
+    ul#popular
+      - Album.popular.preload(:artist).limit(2).each do |album|
+        li
+          - if album.image_medium
+            = image_tag album.image_medium
+          strong> =album.title
+          = link_to album.artist.name, artist_path(album.artist)

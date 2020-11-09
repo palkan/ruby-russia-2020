@@ -1,0 +1,49 @@
+hardwired:
+  title: Hardwired
+  position: 1
+  duration: 189
+  album: hardwired
+
+moth:
+  title: Moth into Flame
+  position: 2
+  duration: 350
+  album: hardwired
+
+halo_on_fire:
+  title: Halo on Fire
+  position: 3
+  duration: 495
+  album: hardwired
+
+frantic:
+  title: Frantic
+  position: 1
+  duration: 350
+  album: st_anger
+
+st_anger:
+  title: St. Anger
+  position: 2
+  duration: 441
+  album: st_anger
+  listenings_count: 1
+
+sadovnik:
+  title: "Садовник"
+  position: 1
+  duration: 212
+  album: sobranie
+
+valet:
+  title: "Валет и дама"
+  position: 2
+  duration: 189
+  album: sobranie
+
+myaso:
+  title: "Ели мясо мужики"
+  position: 3
+  duration: 134
+  album: sobranie
+  listenings_count: 2

@@ -1,0 +1,31 @@
+hardwired:
+  title: "Hardwired…To Self-Destruct"
+  year: 2016
+  images:
+    small: "https://lastfm.freetls.fastly.net/i/u/34s/6aa2d17ccb6f108ccfe13241d9cb9758.png"
+    medium: "https://lastfm.freetls.fastly.net/i/u/64s/6aa2d17ccb6f108ccfe13241d9cb9758.png"
+    large: "https://lastfm.freetls.fastly.net/i/u/174s/6aa2d17ccb6f108ccfe13241d9cb9758.png"
+  artist: metallica
+  tracks_count: 3
+
+st_anger:
+  title: "St. Anger"
+  year: 2003
+  images:
+    small: "https://lastfm.freetls.fastly.net/i/u/34s/b282779061809b3dfda19ff25579a9ae.png"
+    medium: "https://lastfm.freetls.fastly.net/i/u/64s/b282779061809b3dfda19ff25579a9ae.png"
+    large: "https://lastfm.freetls.fastly.net/i/u/174s/b282779061809b3dfda19ff25579a9ae.png"
+  artist: metallica
+  tracks_count: 2
+  listenings_count: 1
+
+sobranie:
+  title: "Собрание"
+  year: 2001
+  images:
+    small: "https://lastfm.freetls.fastly.net/i/u/34s/418e238ae20748588bca30fec489d8ca.png"
+    medium: "https://lastfm.freetls.fastly.net/i/u/64s/418e238ae20748588bca30fec489d8ca.png"
+    large: "https://lastfm.freetls.fastly.net/i/u/174s/418e238ae20748588bca30fec489d8ca.png"
+  artist: kish
+  tracks_count: 3
+  listenings_count: 2

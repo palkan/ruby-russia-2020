@@ -7,7 +7,7 @@ describe "Log in" do
 
   let(:user) { users(:matroskin) }
 
-  before { user.update!(password: "бутерброд", password_confirmation: "бутерброд") }
+  before { user.update!(password: "бутерброд") }
 
   it "I can login from the dashboard" do
     visit root_path

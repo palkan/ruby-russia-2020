@@ -1,0 +1,23 @@
+metallica:
+  name: Metallica
+  bio: Heavy metal from the past
+  images:
+    small: "https://i.scdn.co/image/c1fb4d88de092b5617e649bd4c406b5cab7d3ddd"
+    medium: "https://i.scdn.co/image/0c22030833eb55c14013bb36eb6a429328868c29"
+    large: "https://i.scdn.co/image/5a06711d7fc48d5e0e3f9a3274ffed3f0af1bd91"
+  # don't forget to update the counter after updating the fixtures
+  albums_count: 2
+  tracks_count: 5
+  listenings_count: 1
+
+kish:
+  name: Король и шут
+  bio: Собралися у дуба старинные друзья
+  images:
+    small: "https://lastfm.freetls.fastly.net/i/u/34s/fa69fdfab3004dea9d4d67ceb23e385f.png"
+    medium: "https://lastfm.freetls.fastly.net/i/u/64s/fa69fdfab3004dea9d4d67ceb23e385f.png"
+    large: "https://lastfm.freetls.fastly.net/i/u/174s/fa69fdfab3004dea9d4d67ceb23e385f.png"
+  # don't forget to update the counter after updating the fixtures
+  albums_count: 1
+  tracks_count: 3
+  listenings_count: 2

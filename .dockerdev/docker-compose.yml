@@ -45,6 +45,7 @@ x-backend: &backend
     PSQL_HISTFILE: ${PWD}/log/.psql_history
     EDITOR: vi
     LOG: ${LOG:-0}
+    SHOW_IMAGES: ${SHOW_IMAGES:-0}
   depends_on: &backend_depends_on
     postgres:
       condition: service_healthy

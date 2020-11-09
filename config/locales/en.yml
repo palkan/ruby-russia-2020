@@ -2,9 +2,16 @@ en:
   nav:
     login: Log in
     logout: Log out
+  artists:
+    show:
+      albums: Albums
+      tracks: Tracks
   dashboard:
     show:
       title: "Home"
+      new_releases: "New releases"
+      history: "Your history"
+      popular: "Popular albums"
   sessions:
     new:
       title: "Say your name"

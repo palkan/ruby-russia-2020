@@ -58,4 +58,10 @@ end
 
 RSpec.configure do |config|
   config.include CupriteHelpers, type: :system
+
+  config.before(:each, type: :system) do
+    unless ENV["SHOW_IMAGES"] == "1"
+      page.driver.browser.url_blacklist = ["https://lastfm.freetls.fastly.net", "https://i.scdn.co/"]
+    end
+  end
 end

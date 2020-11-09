@@ -2,9 +2,16 @@ ru:
   nav:
     login: Войти
     logout: Выйти
+  artists:
+    show:
+      albums: Альбомы
+      tracks: Треки
   dashboard:
     show:
       title: "Главное"
+      new_releases: "Новые релизы"
+      history: "История прослушивания"
+      popular: "Популярные альбомы"
   sessions:
     new:
       title: "Назови мне своё имя"
