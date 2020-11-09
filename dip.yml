@@ -83,5 +83,5 @@ provision:
   - dip compose up -d postgres redis
   - dip bundle install
   - dip yarn install
-  - dip rails db:prepare
+  - dip rails db:prepare db:test:prepare
   - cp ./.dockerdev/lefthook-local.yml ./lefthook-local.yml
