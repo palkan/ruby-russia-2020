@@ -1,6 +1,9 @@
 metallica:
   name: Metallica
   bio: Heavy metal from the past
+  tags:
+    - Rock
+    - Metal
   images:
     small: "https://i.scdn.co/image/c1fb4d88de092b5617e649bd4c406b5cab7d3ddd"
     medium: "https://i.scdn.co/image/0c22030833eb55c14013bb36eb6a429328868c29"
@@ -13,6 +16,9 @@ metallica:
 kish:
   name: Король и шут
   bio: Собралися у дуба старинные друзья
+  tags:
+    - Rock
+    - Punk
   images:
     small: "https://lastfm.freetls.fastly.net/i/u/34s/fa69fdfab3004dea9d4d67ceb23e385f.png"
     medium: "https://lastfm.freetls.fastly.net/i/u/64s/fa69fdfab3004dea9d4d67ceb23e385f.png"

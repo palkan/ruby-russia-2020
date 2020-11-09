@@ -1,5 +1,9 @@
 h1 =@artist.name
 
+ul#genres
+  - @artist.tags.each do |tag|
+    li =tag
+
 - if @artist.image_medium
   = image_tag @artist.image_medium
 

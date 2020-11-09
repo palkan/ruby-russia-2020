@@ -11,6 +11,11 @@ describe "Artist" do
     expect(page).to have_text "Metallica"
     expect(page).to have_text "Heavy metal from the past"
 
+    within "#genres" do
+      expect(page).to have_text "Metal"
+      expect(page).to have_text "Rock"
+    end
+
     within "#albums" do
       expect(page).to have_text "Hardwired…To Self-Destruct"
       expect(page).to have_text "St. Anger"

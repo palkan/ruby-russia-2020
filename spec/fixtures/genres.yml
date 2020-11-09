@@ -1,0 +1,11 @@
+rock:
+  name: Rock
+
+metal:
+  name: Metal
+
+pop:
+  name: Pop
+
+punk:
+  name: Punk
