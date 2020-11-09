@@ -1,0 +1,6 @@
+div
+  h2 =t(".title")
+  = form_tag login_path, method: :post do
+    = text_field_tag :username, params[:username], autocomplete: "off", placeholder: t(".placeholder.username")
+    = password_field_tag :password
+    = button_tag t(".login"), type: :submit

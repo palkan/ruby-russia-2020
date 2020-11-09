@@ -1,13 +1,12 @@
-doctype html
-html
-  head
-    title RubyRussiaRocks
-    meta name="viewport" content="width=device-width"
-    = csrf_meta_tags
-    = csp_meta_tag
-    = action_cable_meta_tag
-    = stylesheet_pack_tag "application"
-    = javascript_pack_tag "application", defer: true
-  body
-    .main
-      = yield
+- content_for :content do
+  nav
+    - if logged_in?
+      = form_tag logout_path, method: :delete do
+        span> =current_user.username
+        = button_tag t("nav.logout"), type: :submit
+    - else
+      = link_to t("nav.login"), login_path
+  .main
+    = yield
+
+= render template: 'layouts/core'

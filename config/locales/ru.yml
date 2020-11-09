@@ -1,4 +1,13 @@
 ru:
+  nav:
+    login: Войти
+    logout: Выйти
   dashboard:
     show:
       title: "Главное"
+  sessions:
+    new:
+      title: "Назови мне своё имя"
+      login: "Войти"
+      placeholder:
+        username: "Введите имя пользователя"
