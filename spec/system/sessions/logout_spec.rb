@@ -13,7 +13,7 @@ describe "Log in" do
     within "nav" do
       expect(page).to have_text "Матроскин"
 
-      click_on "Выйти"
+      click_button "Выйти"
 
       expect(page).to have_text "Войти"
       expect(page).not_to have_text "Матроскин", wait: 0

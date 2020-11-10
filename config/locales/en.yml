@@ -2,6 +2,10 @@ en:
   nav:
     login: Log in
     logout: Log out
+    my_favourites: My favourites
+    placeholder:
+      search: "Search library..."
+
   artists:
     show:
       albums: Albums

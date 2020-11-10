@@ -10,7 +10,15 @@ module.exports = {
     ]
   },
   theme: {
-    extend: {}
+    extend: {
+      fontFamily: {
+        body: ['Roboto', 'sans-serif']
+      },
+      colors: {
+        secondary: '#bef6e9',
+        primary: '#1538cf'
+      }
+    }
   },
   variants: {},
   plugins: []
