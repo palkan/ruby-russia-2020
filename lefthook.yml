@@ -7,4 +7,12 @@ pre-commit:
     rubocop:
       tags: ruby style
       glob: "*.{rb,rake}"
-      runner: bundle exec rubocop --parallel --force-exclusion {staged_files}
+      runner: bundle exec rubocop --parallel --force-exclusion {staged_files} && git add {staged_files}
+    standardjs:
+      tags: frontend style
+      glob: "*.js"
+      runner: yarn standard --fix {staged_files} && git add {staged_files}
+    stylelint:
+      tags: frontend style
+      glob: "*.{css,scss}"
+      runner: yarn stylelint {staged_files} && git add {staged_files}

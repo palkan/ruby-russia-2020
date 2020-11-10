@@ -3,6 +3,9 @@
     "@rails/webpacker": "5.2.1"
   },
   "devDependencies": {
+    "standard": "^16.0.1",
+    "stylelint": "^13.7.2",
+    "stylelint-config-standard": "^20.0.0",
     "webpack-dev-server": "^3.11.0"
   }
 }

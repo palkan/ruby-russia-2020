@@ -2,3 +2,7 @@ pre-commit:
   commands:
     rubocop:
       runner: dip {cmd}
+    standardjs:
+      runner: dip {cmd}
+    stylelint:
+      runner: dip {cmd}
