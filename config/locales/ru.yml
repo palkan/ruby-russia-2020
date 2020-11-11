@@ -21,3 +21,4 @@ ru:
       login: "Войти"
       placeholder:
         username: "Введите имя пользователя"
+        password: "Введите пароль"

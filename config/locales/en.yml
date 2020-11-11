@@ -22,3 +22,4 @@ en:
       login: "Log in"
       placeholder:
         username: "Enter username"
+        password: "Type password"
