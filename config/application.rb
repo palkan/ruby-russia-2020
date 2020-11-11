@@ -9,6 +9,7 @@ require "active_record/railtie"
 require "action_controller/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
+require "view_component/engine"
 
 Bundler.require(*Rails.groups)
 
@@ -20,6 +21,9 @@ module RubyRussia2020
     config.i18n.default_locale = :ru
 
     config.hosts = [] if ENV["CODESPACES"] == "true"
+
+    config.autoload_paths << Rails.root.join("app", "frontend", "components")
+    config.view_component.preview_paths << Rails.root.join("app", "frontend", "components")
 
     config.generators do |g|
       g.assets false

@@ -9,6 +9,7 @@ gem "puma", "~> 5.0"
 gem "webpacker"
 
 gem "slim"
+gem "view_component"
 
 gem "bcrypt", "~> 3.1.7"
 
