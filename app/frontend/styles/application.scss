@@ -56,18 +56,6 @@
   &--search {
     @apply ml-4 flex items-center flex-grow max-w-md;
   }
-
-  &--dropdown {
-    @apply absolute z-10 right-0;
-  }
-}
-
-.dropdown {
-  @apply p-3 bg-white border-gray-300 border;
-
-  &--list > li {
-    @apply mt-1 pr-4;
-  }
 }
 
 .input {

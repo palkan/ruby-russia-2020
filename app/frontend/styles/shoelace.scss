@@ -1,0 +1,13 @@
+@import '@shoelace-style/shoelace/dist/shoelace/shoelace.css';
+
+// Shoelace customization
+:root {
+  /* Changes the primary color to our light blue color (used in highlights) */
+  --sl-color-primary-hue: 166;
+  --sl-color-primary-saturation: 76%;
+}
+
+// Remove shadow from dropdowns
+sl-dropdown::part(panel) {
+  box-shadow: none;
+}
