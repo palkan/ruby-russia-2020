@@ -19,6 +19,8 @@ module RubyRussia2020
     config.i18n.available_locales = %w[en ru]
     config.i18n.default_locale = :ru
 
+    config.hosts = [] if ENV["CODESPACES"] == "true"
+
     config.generators do |g|
       g.assets false
       g.helper false
