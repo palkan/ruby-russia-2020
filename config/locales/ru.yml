@@ -22,3 +22,5 @@ ru:
       placeholder:
         username: "Введите имя пользователя"
         password: "Введите пароль"
+    create:
+      failed: "Пользователь не найден"

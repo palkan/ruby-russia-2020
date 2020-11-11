@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
 
       redirect_to(root_path)
     else
-      flash.now[:alert] = "Unknown username"
+      flash.now[:alert] = t(".failed")
       render :new
     end
   end

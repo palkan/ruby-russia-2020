@@ -23,3 +23,5 @@ en:
       placeholder:
         username: "Enter username"
         password: "Type password"
+    create:
+      failed: "Unknown user"

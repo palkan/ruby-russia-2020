@@ -31,4 +31,18 @@ describe "Log in" do
       expect(page).to have_text "Матроскин"
     end
   end
+
+  it "I cannot login with wrong credentials" do
+    visit login_path
+
+    expect(page).to have_text "Назови мне своё имя"
+
+    fill_in :username, with: "Матроскин"
+    fill_in :password, with: "суперкот"
+
+    click_on "Войти"
+
+    expect(page).to have_text "Пользователь не найден"
+    expect(page).to have_current_path(login_path)
+  end
 end
