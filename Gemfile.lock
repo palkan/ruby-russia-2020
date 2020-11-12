@@ -269,6 +269,7 @@ DEPENDENCIES
   capybara
   cuprite
   dry-effects (~> 0.1.5)
+  dry-initializer (~> 3.0)
   listen (~> 3.2)
   pg (~> 1.0)
   pry-byebug

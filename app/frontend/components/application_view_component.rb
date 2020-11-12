@@ -21,6 +21,8 @@ class ApplicationViewComponent < ViewComponent::Base
       "components",
       self.class.name.sub("::Component", "").underscore.split("/")
     ].join(".")
+
+    super
   end
 
   private
