@@ -22,4 +22,13 @@ class ApplicationViewComponent < ViewComponent::Base
       self.class.name.sub("::Component", "").underscore.split("/")
     ].join(".")
   end
+
+  private
+
+  def inline_svg(name)
+    path = File.join(__dir__, "../images", "#{name}.svg")
+    raise ArgumentError, "SVG not found: #{name}. Expected at #{path}" unless File.file?(path)
+
+    File.read(path).html_safe # rubocop:disable Rails/OutputSafety
+  end
 end
