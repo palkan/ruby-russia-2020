@@ -1,24 +1,40 @@
 {
-	"name": "Docker from Docker Compose",
-	"dockerComposeFile": "./docker-compose.yml",
-	"service": "app",
-	"workspaceFolder": "/workspace",
-
-	// Use this environment variable if you need to bind mount your local source code into a new container.
-	"remoteEnv": {
-		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+	"name": "GitHub Codespaces (Default)",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"INSTALL_DOCKER": "true"
+		}
 	},
-
-	// Set *default* container specific settings.json values on container create.
 	"settings": {
-		"terminal.integrated.shell.linux": "/bin/zsh"
+		"terminal.integrated.shell.linux": "/bin/zsh",
+		"files.watcherExclude": {
+			"**/target/**": true
+		}
 	},
+	"remoteUser": "codespace",
+	"overrideCommand": false,
+	"workspaceMount": "source=${localWorkspaceFolder},target=/home/codespace/workspace,type=bind,consistency=cached",
+	"workspaceFolder": "/home/codespace/workspace",
+	"mounts": [ "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind" ],
+	"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
+		"GitHub.vscode-pull-request-github",
+		"MS-vsliveshare.vsliveshare",
+		"VisualStudioExptTeam.vscodeintellicode",
 		"rebornix.Ruby",
-		"bradlc.vscode-tailwindcss"
+		"bradlc.vscode-tailwindcss",
+		"christian-kohler.path-intellisense",
+		"syler.sass-indented",
+		"sianglim.slim",
+		"shardulm94.trailing-spaces"
 	],
 
-	"forwardPorts": [3000]
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [3000],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "./.devcontainer/setup.sh"
 }
