@@ -8,4 +8,9 @@ module ApplicationHelper
       link_to(*args, "javascript:void(0);", **options, &block)
     end
   end
+
+  def component(name, *args, **kwargs, &block)
+    component_class = "#{name.classify}::Component".constantize
+    render component_class.new(*args, **kwargs, &block)
+  end
 end

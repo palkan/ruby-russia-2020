@@ -1,5 +1,5 @@
 - content_for :content do
-  = render Topnavbar::Container::Component.new
+  = component "topnavbar/container"
 
   .main.container.h-full.p-4
     = yield

@@ -2,7 +2,7 @@ nav.nav
   .nav--left
     .nav--logo
       = inline_svg "logo"
-    = render Topnavbar::Search::Component.new
+    = component "topnavbar/search"
   .nav--right
-    = render Topnavbar::User::Component.new
-    = render Topnavbar::Login::Component.new
+    = component "topnavbar/user"
+    = component "topnavbar/login"
