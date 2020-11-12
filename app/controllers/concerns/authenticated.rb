@@ -4,7 +4,13 @@
 module Authenticated
   extend ActiveSupport::Concern
 
+  include Dry::Effects::Handler.State(:current_user)
+
   included do
+    if respond_to?(:around_action)
+      around_action :set_current_user
+    end
+
     next unless respond_to?(:helper_method)
 
     helper_method :current_user
@@ -22,6 +28,10 @@ module Authenticated
   end
 
   private
+
+  def set_current_user
+    with_current_user(current_user) { yield }
+  end
 
   def login_from_session
     return unless session[:user_id]

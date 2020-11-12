@@ -3,6 +3,8 @@
 class ApplicationViewComponentPreview < ViewComponent::Preview
   self.abstract_class = true
 
+  include Dry::Effects.State(:current_user)
+
   class << self
     attr_accessor :default_locals
 

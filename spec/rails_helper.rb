@@ -65,6 +65,9 @@ RSpec.configure do |config|
   # See https://andycroll.com/ruby/replace-timecop-with-rails-time-helpers-in-rspec/
   config.include ActiveSupport::Testing::TimeHelpers
 
+  # Add #with_current_user effect handler
+  config.include Dry::Effects::Handler.Reader(:current_user)
+
   config.include ViewComponent::TestHelpers, type: :view_component
   config.include Capybara::RSpecMatchers, type: :view_component
 
