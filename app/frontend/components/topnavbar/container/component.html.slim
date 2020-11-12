@@ -1,0 +1,13 @@
+nav.nav
+  .nav--left
+    .nav--logo
+      <svg viewBox="0 0 490 340" xmlns="http://www.w3.org/2000/svg">
+        <path transform="translate(50)" fill="#EF303B" fill-rule="evenodd" d="M.184 110.612L110.388 0h220.408L441 110.612 220.592 331.837z"/>
+        <g fill="none" fill-rule="evenodd">
+          <path fill="#231F20" d="M71.15 201.225l166.639 64.27v70.303l-166.64-64.222v57.101H0V0h71.15v201.225z"/><path fill="#1538CF" d="M0 0l.204 62.737h176.518L.204 171.102l72.76 30.656L243.162 95.13V0z"/>
+        </g>
+      </svg>
+    = render Topnavbar::Search::Component.new
+  .nav--right
+    = render Topnavbar::User::Component.new
+    = render Topnavbar::Login::Component.new
