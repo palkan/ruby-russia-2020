@@ -1,6 +1,6 @@
 nav.nav
   .nav--left
-    .nav--logo
+    = link_to root_path, class: "nav--logo" do
       = inline_svg "logo"
     = component "topnavbar/search"
   .nav--right
