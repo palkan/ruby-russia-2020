@@ -58,7 +58,7 @@ RSpec.configure do |config|
     config.filter_rails_from_backtrace!
 
     # Request/Rack middlewares
-    config.filter_gems_from_backtrace "railties", "rack", "rack-test"
+    config.filter_gems_from_backtrace "railties", "rack", "rack-test", "capybara"
   end
 
   # Add `travel_to`
