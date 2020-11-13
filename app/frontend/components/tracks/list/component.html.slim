@@ -1,0 +1,21 @@
+ul.tracks
+  - tracks.each.with_index do |track, i|
+    li.track class="#{ "track-readonly" unless current_user }"
+      span.track--number
+        - if playing?(track)
+          span.track--number--text.track--playing-indicator
+          = mock_link_to class: "track--number--btn" do
+            = inline_svg "icons/solid/pause"
+        - else
+          span.track--number--text ="#{i + 1}"
+          = mock_link_to class: "track--number--btn" do
+            = inline_svg "icons/play"
+      = mock_link_to track.title, class: "track--title"
+      span.track--actions
+        - if liked?(track)
+          = mock_link_to do
+            = inline_svg "icons/solid/heart"
+        - else
+          = mock_link_to do
+            = inline_svg "icons/heart"
+      span.track--duration =seconds_to_duration(track.duration)
