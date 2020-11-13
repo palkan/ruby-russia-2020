@@ -4,7 +4,7 @@
   h2.mt-2 =t(".new_releases")
 
   .tiles-row#new
-    = component_collection "albums/tile", Album.new_releases.preload(:artist).limit(10)
+    = component_collection "albums/tile", Album.ordered.preload(:artist).limit(10)
 
   - if current_user
     h2.mt-4 =t(".history")
@@ -14,4 +14,4 @@
 
   h2.mt-4 =t(".popular")
   .tiles-grid#popular
-    = component_collection "albums/tile", Album.popular.preload(:artist).limit(10)
+    = component_collection "albums/tile", Album.popularity_ordered.preload(:artist).limit(10)

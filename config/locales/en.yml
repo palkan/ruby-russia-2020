@@ -19,6 +19,10 @@ en:
     albums:
       header:
         tracks: "%{count} tracks"
+    artist:
+      tracks: Tracks
+      albums: Albums
+      info: Info
   sessions:
     new:
       title: "Say your name"

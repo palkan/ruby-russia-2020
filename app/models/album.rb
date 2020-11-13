@@ -8,6 +8,6 @@ class Album < ApplicationRecord
 
   validates :title, length: {maximum: 255}
 
-  scope :new_releases, -> { order(year: :desc, created_at: :desc) }
-  scope :popular, -> { order(listenings_count: :desc) }
+  scope :ordered, -> { order(year: :desc, created_at: :desc) }
+  scope :popularity_ordered, -> { order(listenings_count: :desc) }
 end

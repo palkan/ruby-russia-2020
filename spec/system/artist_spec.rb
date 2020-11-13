@@ -9,20 +9,25 @@ describe "Artist" do
     visit artist_path(artists(:metallica))
 
     expect(page).to have_text "Metallica"
-    expect(page).to have_text "Heavy metal from the past"
 
-    within "#genres" do
+    within ".artist-header--meta" do
       expect(page).to have_text "Metal"
       expect(page).to have_text "Rock"
     end
 
-    within "#albums" do
-      expect(page).to have_text "Hardwired…To Self-Destruct"
-      expect(page).to have_text "St. Anger"
-    end
+    click_on "Информация"
+
+    expect(page).to have_text "Heavy metal from the past"
+
+    click_on "Альбомы"
+
+    expect(page).to have_text "Hardwired…To Self-Destruct"
+    expect(page).to have_text "St. Anger"
+
+    click_on "Треки"
 
     # The first track is the most listened one
-    within "#tracks li:first-child" do
+    within ".track:first-child" do
       expect(page).to have_text "St. Anger"
     end
   end
