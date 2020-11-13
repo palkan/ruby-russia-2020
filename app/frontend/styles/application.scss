@@ -64,6 +64,10 @@
   }
 }
 
+.icon-btn > svg {
+  @apply w-8 h-8;
+}
+
 .meta {
   @apply text-gray-600 text-sm;
 

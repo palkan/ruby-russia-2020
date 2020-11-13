@@ -16,6 +16,9 @@ en:
       new_releases: "New releases"
       history: "Your history"
       popular: "Popular albums"
+    albums:
+      header:
+        tracks: "%{count} tracks"
   sessions:
     new:
       title: "Say your name"

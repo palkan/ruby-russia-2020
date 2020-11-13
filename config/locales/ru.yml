@@ -15,6 +15,9 @@ ru:
       new_releases: "Новые релизы"
       history: "История прослушивания"
       popular: "Популярные альбомы"
+    albums:
+      header:
+        tracks: "%{count} треков"
   sessions:
     new:
       title: "Назови мне своё имя"

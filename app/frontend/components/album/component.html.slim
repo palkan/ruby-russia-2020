@@ -1,0 +1,4 @@
+div
+  = component "albums/header", album: album
+  .mt-4
+    = component "tracks/list", tracks: album.tracks.ordered
