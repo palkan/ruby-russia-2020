@@ -1,13 +1,10 @@
 - content_for :content do
   = component "topnavbar/container"
 
-  // TEMP
-  - params[:album] && (album = Album.find_by(id: params[:album]))
-
   .main
     = yield
-  - if album
-    aside.aside data-controller="body-prop" data-body-prop-name="has-aside"
-      = component "album", album: album
+  - if open_album
+    aside.aside data-controller="body-prop" data-body-prop-name="has-aside" data-turbolinks-permanent=true id=dom_id(open_album)
+      = component "album", album: open_album
 
 = render template: 'layouts/core'

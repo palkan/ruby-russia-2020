@@ -243,6 +243,9 @@ GEM
     test-prof (0.12.2)
     thor (1.0.1)
     tilt (2.0.10)
+    turbolinks (5.2.1)
+      turbolinks-source (~> 5.2)
+    turbolinks-source (5.2.0)
     tzinfo (2.0.3)
       concurrent-ruby (~> 1.0)
     unicode-display_width (1.7.0)
@@ -282,6 +285,7 @@ DEPENDENCIES
   slim
   standard (~> 0.8.0)
   test-prof
+  turbolinks
   view_component
   webpacker
 

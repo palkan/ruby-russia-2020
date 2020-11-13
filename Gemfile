@@ -13,6 +13,8 @@ gem "dry-initializer", "~> 3.0"
 
 gem "slim"
 gem "view_component"
+# We only need controllers integration
+gem "turbolinks", require: "turbolinks/redirection"
 
 gem "bcrypt", "~> 3.1.7"
 
