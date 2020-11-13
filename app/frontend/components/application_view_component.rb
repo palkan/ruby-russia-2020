@@ -5,6 +5,7 @@ class ApplicationViewComponent < ViewComponent::Base
 
   extend Dry::Initializer
   include Dry::Effects.Reader(:current_user, default: nil)
+  include Dry::Effects.Reader(:current_track, default: nil)
 
   class << self
     def validate_collection_parameter!(*)

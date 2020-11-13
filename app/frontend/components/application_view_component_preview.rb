@@ -6,6 +6,7 @@ class ApplicationViewComponentPreview < ViewComponent::Preview
   DEFAULT_TEMPLATE = "layouts/view_components/preview"
 
   include Dry::Effects.State(:current_user)
+  include Dry::Effects.State(:current_track)
 
   class << self
     attr_accessor :default_locals
