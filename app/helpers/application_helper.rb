@@ -10,12 +10,12 @@ module ApplicationHelper
   end
 
   def component(name, **kwargs, &block)
-    component_class = "#{name.classify}::Component".constantize
-    render component_class.new(**kwargs, &block)
+    component_class = "#{name.camelize}::Component".constantize
+    render(component_class.new(**kwargs), &block)
   end
 
   def component_collection(name, collection, **kwargs)
-    component_class = "#{name.classify}::Component".constantize
+    component_class = "#{name.camelize}::Component".constantize
 
     render component_class.with_collection(collection, **kwargs)
   end
