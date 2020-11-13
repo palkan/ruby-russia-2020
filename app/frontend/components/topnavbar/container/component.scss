@@ -1,7 +1,7 @@
 .nav {
   height: 70px;
 
-  @apply bg-secondary w-full border-b border-gray-300 flex items-center justify-between absolute top-0;
+  @apply bg-secondary w-full border-b border-gray-300 flex items-center justify-between sticky top-0 z-10;
 
   &--left {
     @apply ml-4 flex flex-grow h-full;
