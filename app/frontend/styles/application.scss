@@ -64,6 +64,14 @@
   }
 }
 
+.meta {
+  @apply text-gray-600 text-sm;
+
+  &:not(:last-child)::after {
+    content: " ○ ";
+  }
+}
+
 .main {
   padding-top: 70px;
 }

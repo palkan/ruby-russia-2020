@@ -1,0 +1,11 @@
+.artist-header {
+  @apply p-4 flex justify-items-start;
+
+  &--image {
+    @apply w-32 bg-gray-200 object-fill rounded-full overflow-hidden mr-4;
+  }
+
+  &--meta {
+    @apply mt-2;
+  }
+}
