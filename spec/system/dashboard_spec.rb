@@ -12,11 +12,11 @@ describe "Dashboard" do
     expect(page).to have_text "Новые релизы", wait: 0
     expect(page).to have_text "Популярные альбомы", wait: 0
 
-    within "#new li:first-child" do
+    within "#new .tile:first-child" do
       expect(page).to have_text "Hardwired", wait: 0
     end
 
-    within "#popular li:first-child" do
+    within "#popular .tile:first-child" do
       expect(page).to have_text "Собрание", wait: 0
     end
   end
@@ -30,11 +30,11 @@ describe "Dashboard" do
     expect(page).to have_text "Новые релизы", wait: 0
     expect(page).to have_text "История прослушивания", wait: 0
 
-    within "#new li:first-child" do
+    within "#new .tile:first-child" do
       expect(page).to have_text "Hardwired", wait: 0
     end
 
-    within "#history li:first-child" do
+    within "#history .tile:first-child" do
       expect(page).to have_text "Ели мясо мужики", wait: 0
     end
   end
@@ -44,7 +44,7 @@ describe "Dashboard" do
 
     expect(page).to have_text "Главное"
 
-    within "#new li:first-child" do
+    within "#new .tile:first-child" do
       click_on "Metallica"
     end
 

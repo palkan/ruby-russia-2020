@@ -9,8 +9,14 @@ module ApplicationHelper
     end
   end
 
-  def component(name, *args, **kwargs, &block)
+  def component(name, **kwargs, &block)
     component_class = "#{name.classify}::Component".constantize
-    render component_class.new(*args, **kwargs, &block)
+    render component_class.new(**kwargs, &block)
+  end
+
+  def component_collection(name, collection, **kwargs)
+    component_class = "#{name.classify}::Component".constantize
+
+    render component_class.with_collection(collection, **kwargs)
   end
 end

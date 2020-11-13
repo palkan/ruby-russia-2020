@@ -9,8 +9,8 @@ ru:
     show:
       albums: Альбомы
       tracks: Треки
-  dashboard:
-    show:
+  components:
+    dashboard:
       title: "Главное"
       new_releases: "Новые релизы"
       history: "История прослушивания"

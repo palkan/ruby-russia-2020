@@ -10,8 +10,8 @@ en:
     show:
       albums: Albums
       tracks: Tracks
-  dashboard:
-    show:
+  components:
+    dashboard:
       title: "Home"
       new_releases: "New releases"
       history: "Your history"
