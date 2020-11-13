@@ -1,0 +1,39 @@
+// stylelint-disable no-descending-specificity
+
+.tabs {
+  @apply w-full border-b border-gray-200 flex;
+}
+
+.tab {
+  @apply inline-block px-4;
+
+  &:first-child {
+    @apply pl-0;
+  }
+
+  &:last-child {
+    @apply pr-0;
+  }
+
+  & > a {
+    @apply py-1 text-gray-600;
+
+    &:hover {
+      @apply text-black;
+    }
+  }
+
+  &-active > a {
+    @apply border-primary text-black border-b-2;
+
+    padding-bottom: 2px;
+
+    &:hover {
+      @apply text-primary;
+    }
+  }
+
+  &-content {
+    @apply mt-4;
+  }
+}

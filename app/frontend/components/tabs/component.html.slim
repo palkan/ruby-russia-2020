@@ -1,0 +1,8 @@
+.tabs-container data-controller="tabs" data-tabs-active-class="tab-active" data-tabs-hidden-class="hidden"
+  ul.tabs
+    - tabs.each do |tab|
+      li.tab data-tabs-target="label" data-action="click->tabs#switch" class="#{ "tab-active" if tab == active_tab }"
+        = mock_link_to tab.label
+  - tabs.each do |tab|
+    .tab-content data-tabs-target="content" data-tab-id=tab.id class="#{ "hidden" unless tab == active_tab }"
+      = tab.content
