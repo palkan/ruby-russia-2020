@@ -3,9 +3,11 @@
 
   .main
     = yield
-  - if open_album
-    aside.aside data-controller="body-prop" data-body-prop-name="has-aside" data-turbolinks-permanent=true id=dom_id(open_album)
-      = component "album", album: open_album
+
+  / Container for album aside
+  aside#aside
+    = component "albums/aside", album: current_aside_album
+
   - if current_track
     = component "player", track: current_track
 
