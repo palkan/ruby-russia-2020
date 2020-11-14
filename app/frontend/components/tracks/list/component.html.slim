@@ -3,9 +3,7 @@ ul.tracks
     li.track class="#{ "track-readonly" unless current_user }"
       span.track--number
         - if playing?(track)
-          span.track--number--text.track--playing-indicator
-          = mock_link_to class: "track--number--btn", data: {reflex: "click->Player#pause", track: track.id} do
-            = inline_svg "icons/solid/pause"
+          span.track--playing-indicator
         - else
           span.track--number--text ="#{i + 1}"
           = mock_link_to class: "track--number--btn", data: {reflex: "click->Player#play", track: track.id} do

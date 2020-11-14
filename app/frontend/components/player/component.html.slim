@@ -1,7 +1,7 @@
 .player#player [
   data-controller="player body-prop"
   data-body-prop-name="has-player"
-  data-action="timeupdate->player#updateTime"
+  data-action="timeupdate->player#updateTime ended->player#pause"
   data-player-duration-value=track.duration
   data-player-track-value=track.id
   data-player-playing-class="player-playing"

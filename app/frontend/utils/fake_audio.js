@@ -11,6 +11,8 @@ export default class {
   play () {
     if (this.playing) return
 
+    if (this.currentTime >= this.duration) { this.currentTime = 0.0 }
+
     this.tickTid = setInterval(this.tick, 500)
     this.playing = true
   }
@@ -30,7 +32,13 @@ export default class {
   tick () {
     this.currentTime += 0.5
 
-    this.dispatch('timeupdate')
+    if (this.currentTime >= this.duration) {
+      this.pause()
+      this.dispatch('timeupdate')
+      this.dispatch('ended')
+    } else {
+      this.dispatch('timeupdate')
+    }
   }
 
   dispatch (type) {
