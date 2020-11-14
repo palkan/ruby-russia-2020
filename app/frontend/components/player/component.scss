@@ -1,0 +1,94 @@
+// stylelint-disable no-descending-specificity
+
+.player {
+  height: 70px;
+
+  @apply bg-primary w-full flex items-center fixed bottom-0 px-4 bg-opacity-75;
+
+  &--controls {
+    @apply flex items-center flex-shrink-0;
+  }
+
+  &-btn > svg {
+    @apply text-white w-6 h-6 fill-current;
+  }
+
+  &-btn:hover > svg {
+    @apply text-secondary;
+  }
+
+  &-btn-large > svg {
+    @apply w-8 h-8;
+  }
+
+  &--cover {
+    height: 60px;
+    width: 60px;
+    margin: 5px 0;
+
+    @apply flex-shrink-0;
+
+    & > img {
+      height: 100%;
+    }
+  }
+
+  &--track {
+    @apply flex items-center invisible ml-4;
+
+    @screen sm {
+      & {
+        @apply visible;
+      }
+    }
+  }
+
+  &--info {
+    @apply flex flex-col justify-items-center ml-2;
+  }
+
+  &--title {
+    @apply text-white text-sm w-full;
+  }
+
+  &--author {
+    @apply text-xs text-secondary whitespace-no-wrap;
+  }
+
+  &--timestamps {
+    @apply flex flex-shrink-0 flex-grow justify-end text-sm text-secondary;
+  }
+
+  &--current-time {
+    @apply text-white;
+  }
+
+  &--timeline {
+    height: 6px;
+    top: -6px;
+
+    @apply absolute left-0 right-0 w-full bg-secondary z-20 cursor-pointer;
+  }
+
+  &--timeline-progress {
+    @apply bg-red-700 h-full absolute left-0;
+
+    transition: width 0.5s;
+  }
+
+  &--pause-btn {
+    @apply hidden;
+
+    .player-playing & {
+      @apply inline;
+    }
+  }
+
+  &--play-btn {
+    @apply inline;
+
+    .player-playing & {
+      @apply hidden;
+    }
+  }
+}
