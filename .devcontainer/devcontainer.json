@@ -12,6 +12,9 @@
 			"**/target/**": true
 		}
 	},
+	"remoteEnv": {
+		"LIVE_RELOAD": "false"
+	},
 	"remoteUser": "codespace",
 	"overrideCommand": false,
 	"workspaceMount": "source=${localWorkspaceFolder},target=/home/codespace/workspace,type=bind,consistency=cached",

@@ -113,6 +113,8 @@ services:
     environment:
       <<: *env
       WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
+      WEBPACKER_DEV_SERVER_INLINE: "${LIVE_RELOAD:-true}"
+      WEBPACKER_DEV_SERVER_LIVE_RELOAD: "${LIVE_RELOAD:-true}"
 
   chrome:
     image: browserless/chrome:1.31-chrome-stable
