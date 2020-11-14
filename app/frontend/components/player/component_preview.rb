@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class Player::ComponentPreview < ApplicationViewComponentPreview
+  self.default_locals = {
+    container_class: "absolute w-full"
+  }
+
   def default
     album = Album.random.first
 
