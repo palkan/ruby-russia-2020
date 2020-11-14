@@ -896,10 +896,10 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.5.4.tgz#de25b5da9f727985a3757fd59b5d028aba75841a"
   integrity sha512-ZpKr+WTb8zsajqgDkvCEWgp6d5eJT6Q63Ng2neTbzBO76Lbe91vX/iVIW9dikq+Fs3yEo+ls4cxeXABD2LtcbQ==
 
-"@rails/actioncable@>= 6.0":
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-6.0.3.tgz#722b4b639936129307ddbab3a390f6bcacf3e7bc"
-  integrity sha512-I01hgqxxnOgOtJTGlq0ZsGJYiTEEiSGVEGQn3vimZSqEP1HqzyFNbzGTq14Xdyeow2yGJjygjoFF1pmtE+SQaw==
+"@rails/actioncable@^6.0.3-4":
+  version "6.0.3-4"
+  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-6.0.3-4.tgz#f17c0ef2235d1624d6052b749005608260bd55ef"
+  integrity sha512-uie5McTpl69vHnXCVzKj7iYpVKFfLuE7aqul/I7MX5zVd+yVyyC/g75T1Q10GofyqHYNYWgPiIxgQIoYPyyeKw==
 
 "@rails/webpacker@5.2.1":
   version "5.2.1"
@@ -1859,10 +1859,10 @@ bytes@3.1.0, bytes@^3.0.0:
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.0.tgz#f6cf7933a360e0588fa9fde85651cdc7f805d1f6"
   integrity sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
 
-"cable_ready@>= 4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/cable_ready/-/cable_ready-4.3.0.tgz#69c6c6963a60d7891f43c7530e343007a00a50b3"
-  integrity sha512-/hjwgdwMoe2hE5KKunsuWXDTr26GzwR7CovdFKHdSHD/yZTFFIv/eY27slMiXUEb57X12GHdliSM59rftTKpoQ==
+cable_ready@^4.4.0-pre3:
+  version "4.4.0-pre3"
+  resolved "https://registry.yarnpkg.com/cable_ready/-/cable_ready-4.4.0-pre3.tgz#096e67a5947325ae03c0a10e9218c2cf7c60e6cd"
+  integrity sha512-jtQi03m3nKHGu1q+moHf28TRrOsgx9s82PeRCye7yw4zw9xRNtwHmIDmqxMf+wNwzh/HutkGOIoQW/sOf5VrxA==
   dependencies:
     morphdom "^2.6.1"
 
@@ -3734,11 +3734,6 @@ form-data@~2.3.2:
     asynckit "^0.4.0"
     combined-stream "^1.0.6"
     mime-types "^2.1.12"
-
-"form-serialize@>= 0.7.2":
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/form-serialize/-/form-serialize-0.7.2.tgz#b0a2ff0c22026fb6d3d15c9d33f6de6a432e4732"
-  integrity sha1-sKL/DCICb7bT0VydM/beakMuRzI=
 
 forwarded@~0.1.2:
   version "0.1.2"
@@ -8199,22 +8194,17 @@ stdout-stream@^1.4.0:
   dependencies:
     readable-stream "^2.0.1"
 
-"stimulus@>= 1.1", "stimulus@https://github.com/stimulusjs/dev-builds/archive/b8cc8c4/stimulus.tar.gz":
+"stimulus@https://github.com/stimulusjs/dev-builds/archive/b8cc8c4/stimulus.tar.gz":
   version "1.1.1"
   resolved "https://github.com/stimulusjs/dev-builds/archive/b8cc8c4/stimulus.tar.gz#6e0e097d712641214cc066e1b7aa83d308f0488c"
   dependencies:
     "@stimulus/core" "https://github.com/stimulusjs/dev-builds/archive/b8cc8c4/@stimulus/core.tar.gz"
     "@stimulus/webpack-helpers" "https://github.com/stimulusjs/dev-builds/archive/b8cc8c4/@stimulus/webpack-helpers.tar.gz"
 
-stimulus_reflex@3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/stimulus_reflex/-/stimulus_reflex-3.3.0.tgz#3de755f21374d399d5337e0c60f5350cf81cc0de"
-  integrity sha512-HfeUIGeaA7N3tJEhJKt5SoiwTNw0Q8dt1DW9U0WNQom3F1ImaXigoP19spyrGS7yJmGw3Cwj/bikwwHsIdxaKg==
-  dependencies:
-    "@rails/actioncable" ">= 6.0"
-    cable_ready ">= 4.3.0"
-    form-serialize ">= 0.7.2"
-    stimulus ">= 1.1"
+stimulus_reflex@^3.4.0-pre3:
+  version "3.4.0-pre3"
+  resolved "https://registry.yarnpkg.com/stimulus_reflex/-/stimulus_reflex-3.4.0-pre3.tgz#b6769fb02b8b7c69e605929aa3d2a206b12a2ff3"
+  integrity sha512-9UdEkGU95H9pv8aOKA8QV69WJe1CRamIQy67Z/RoXni7UYSMvsUe5mxH5223+nGGEm/LFSChCcXtH86FlaA+LA==
 
 stream-browserify@^2.0.1:
   version "2.0.2"

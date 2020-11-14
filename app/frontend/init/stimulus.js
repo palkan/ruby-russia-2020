@@ -20,4 +20,4 @@ context.keys().forEach((path) => {
 const controllersContext = require.context('../controllers', true, /_controller\.js$/)
 application.load(definitionsFromContext(controllersContext))
 
-StimulusReflex.initialize(application, { consumer })
+StimulusReflex.initialize(application, { consumer, isolate: true })

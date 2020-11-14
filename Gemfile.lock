@@ -242,8 +242,7 @@ GEM
     standard (0.8.1)
       rubocop (= 1.0.0)
       rubocop-performance (= 1.8.1)
-    stimulus_reflex (3.3.0)
-      cable_ready (>= 4.3.0)
+    stimulus_reflex (3.4.0.pre3)
       nokogiri
       rack
       rails (>= 5.2)
@@ -278,6 +277,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
+  cable_ready
   capybara
   cuprite
   dry-effects (~> 0.1.5)
@@ -293,7 +293,7 @@ DEPENDENCIES
   rubocop-rspec
   slim
   standard (~> 0.8.0)
-  stimulus_reflex (~> 3.3)
+  stimulus_reflex (>= 3.4.0.pre3)
   test-prof
   turbolinks
   view_component
