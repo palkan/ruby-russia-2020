@@ -1,6 +1,5 @@
-= component "tile",
-  cover_url: album.image_large,
-  title: album.title,
-  title_link: "?album=#{album.to_param}",
-  author: artist.name,
-  author_link: artist_path(artist)
+= component("tile", cover_url: album.image_large) do |tile|
+  - tile.with(:title) do
+    = mock_link_to album.title, title: album.title, class: "tile--title"
+  - tile.with(:author) do
+    = link_to artist.name, artist, title: artist.name, class: "tile--author"
