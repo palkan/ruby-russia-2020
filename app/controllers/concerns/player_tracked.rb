@@ -4,11 +4,12 @@ module PlayerTracked
   extend ActiveSupport::Concern
 
   include Dry::Effects::Handler.State(:current_track)
+  include Dry::Effects.State(:current_track)
 
   included do
     around_action :set_current_track
 
-    helper_method :open_album
+    helper_method :open_album, :current_track
   end
 
   private

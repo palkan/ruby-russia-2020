@@ -6,5 +6,7 @@
   - if open_album
     aside.aside data-controller="body-prop" data-body-prop-name="has-aside" data-turbolinks-permanent=true id=dom_id(open_album)
       = component "album", album: open_album
+  - if current_track
+    = component "player", track: current_track
 
 = render template: 'layouts/core'

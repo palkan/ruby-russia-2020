@@ -60,20 +60,20 @@ export default class extends Controller {
   static classes = ['playing']
 
   static values = {
-    duration: Number
+    duration: Number,
+    track: Number
   }
 
-  connect () {
+  initialize () {
     this.updateTime = this.updateTime.bind(this)
-
-    this.audio = new FakeAudio(this.element, this.durationValue)
   }
 
-  disconnect () {
-    if (!this.audio) return
-
-    this.audio.dispose()
-    delete this.audio
+  trackValueChanged () {
+    if (this.audio) {
+      this.audio.dispose()
+    }
+    this.audio = new FakeAudio(this.element, this.durationValue)
+    this.play()
   }
 
   play () {

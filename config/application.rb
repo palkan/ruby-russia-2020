@@ -25,6 +25,8 @@ module RubyRussia2020
     config.autoload_paths << Rails.root.join("app", "frontend", "components")
     config.view_component.preview_paths << Rails.root.join("app", "frontend", "components")
 
+    config.session_store :cache_store
+
     config.generators do |g|
       g.assets false
       g.helper false
