@@ -1,5 +1,6 @@
 = component "tile",
   cover_url: album.image_large,
   title: album.title,
+  title_link: "?album=#{album.to_param}",
   author: artist.name,
   author_link: artist_path(artist)

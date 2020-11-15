@@ -1,0 +1,11 @@
+div
+  = component "artists/header", artist: artist
+  = component "tabs" do |tabs|
+    - tabs.slot(:tab, label: t(".tracks"), id: :tracks) do
+      = component "tracks/list", tracks: artist.tracks.popularity_ordered.limit(10)
+    - tabs.slot(:tab, label: t(".albums"), id: :albums) do
+      .tiles-grid
+        = component_collection "albums/tile", artist.albums.ordered
+    - if artist.bio.present?
+      - tabs.slot(:tab, label: t(".info"), id: :info) do
+        == artist.bio

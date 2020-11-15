@@ -18,6 +18,10 @@ ru:
     albums:
       header:
         tracks: "%{count} треков"
+    artist:
+      tracks: Треки
+      albums: Альбомы
+      info: Информация
   sessions:
     new:
       title: "Назови мне своё имя"

@@ -5,6 +5,6 @@
   .artist-header--info
     h1 =artist.name
     - if artist.tags.present?
-      div
+      .artist-header--meta
         - artist.tags.each do |tag|
           span.meta =tag

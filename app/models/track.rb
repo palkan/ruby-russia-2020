@@ -18,4 +18,5 @@ class Track < ApplicationRecord
   end
 
   scope :ordered, -> { order(position: :asc) }
+  scope :popularity_ordered, -> { order(listenings_count: :desc) }
 end

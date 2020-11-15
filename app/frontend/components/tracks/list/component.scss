@@ -10,6 +10,10 @@
   }
 }
 
+.tracks {
+  @apply p-2;
+}
+
 .track {
   @apply flex flex-row py-1 text-sm;
 

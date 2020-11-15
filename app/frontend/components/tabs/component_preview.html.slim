@@ -1,0 +1,7 @@
+= component "tabs" do |tabs|
+  - tabs.slot(:tab, label: "Инфо", id: :info) do
+    div Какая-то информация
+  - tabs.slot(:tab, label: "Альбомы", id: :albums) do
+    div Тут альбом
+  - tabs.slot(:tab, label: "Треки", id: :tracks) do
+    div Тут песни будут
