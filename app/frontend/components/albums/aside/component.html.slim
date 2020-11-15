@@ -1,0 +1,12 @@
+- if album
+  .album-aside#album-aside [
+    data-controller="body-prop"
+    data-body-prop-name="has-aside"
+    data-turbolinks-permanent=true
+    data-relfex-permanent=true
+  ]
+    sl-icon-button.album-aside--close name="x" data-reflex="click->Album#hide"
+    = component "album", album: album
+- else
+  / Hack to make Turbolinks permanent work
+  #album-aside data-turbolinks-permanent=true

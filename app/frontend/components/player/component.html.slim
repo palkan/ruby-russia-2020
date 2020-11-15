@@ -1,0 +1,33 @@
+.player#player [
+  data-controller="player body-prop"
+  data-body-prop-name="has-player"
+  data-action="timeupdate->player#updateTime ended->player#pause"
+  data-player-duration-value=track.duration
+  data-player-track-value=track.id
+  data-player-playing-class="player-playing"
+  data-turbolinks-permanent=true
+]
+  .player--timeline  data-action="click->player#seek"
+    .player--timeline-progress data-player-target="progress"
+  .player--controls
+    = mock_link_to class: "player-btn" do
+      = inline_svg "icons/solid/rewind"
+    = mock_link_to class: "player-btn player-btn-large player--play-btn", data: {action: "player#play"} do
+      = inline_svg "icons/solid/play_outline"
+    = mock_link_to class: "player-btn player-btn-large player--pause-btn", data: {action: "player#pause"} do
+      = inline_svg "icons/solid/pause_outline"
+    = mock_link_to class: "player-btn" do
+      = inline_svg "icons/solid/forward"
+  .player--track
+    - if cover
+      .player--cover
+        = image_tag cover
+    .player--info
+      = mock_link_to class: "player--title" do
+        = title
+      = link_to artist, class: "player--author" do
+        = artist_name
+  .player--timestamps
+    span.player--current-time data-player-target="time" 00:00
+    span &nbsp;/&nbsp;
+    span =duration

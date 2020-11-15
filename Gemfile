@@ -8,6 +8,9 @@ gem "pg", "~> 1.0"
 gem "puma", "~> 5.0"
 gem "webpacker"
 
+gem "cable_ready"
+gem "stimulus_reflex", ">= 3.4.0.pre3"
+
 gem "dry-effects", "~> 0.1.5"
 gem "dry-initializer", "~> 3.0"
 
