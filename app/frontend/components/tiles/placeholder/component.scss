@@ -1,0 +1,11 @@
+.tile-placeholder {
+  @apply cursor-default border-none animate-pulse;
+
+  &--title {
+    @apply bg-gray-300 w-32 h-5 mt-1;
+  }
+
+  &--author {
+    @apply .tile-placeholder--title h-4 w-24;
+  }
+}

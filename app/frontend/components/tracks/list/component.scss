@@ -1,0 +1,67 @@
+@keyframes track-playing {
+  0% {
+    transform: scale(0.75);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+}
+
+.track {
+  @apply flex flex-row py-1 text-sm;
+
+  &-readonly {
+    @apply pointer-events-none;
+  }
+
+  &--number {
+    @apply text-gray-600 w-6 text-right mr-2;
+
+    &--btn {
+      @apply hidden;
+
+      &:hover {
+        @apply text-primary;
+      }
+    }
+
+    &:hover {
+      & > .track--number--text {
+        @apply hidden;
+      }
+
+      & > .track--number--btn {
+        @apply inline;
+      }
+    }
+  }
+
+  &--playing-indicator {
+    @apply relative inline-flex rounded-full h-3 w-3 bg-primary;
+
+    animation: track-playing 1s infinite;
+  }
+
+  &--title {
+    @apply flex-grow truncate text-black;
+
+    &:hover {
+      @apply text-primary;
+    }
+  }
+
+  &--actions {
+    @apply invisible;
+  }
+
+  &:hover > &--actions {
+    @apply visible;
+  }
+
+  &--duration {
+    @apply text-gray-600 self-end w-10 ml-2 text-right;
+  }
+}

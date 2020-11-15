@@ -9,8 +9,18 @@ module ApplicationHelper
     end
   end
 
-  def component(name, *args, **kwargs, &block)
-    component_class = "#{name.classify}::Component".constantize
-    render component_class.new(*args, **kwargs, &block)
+  def seconds_to_duration(seconds)
+    [seconds / 60, seconds % 60].map! { |t| t.to_s.rjust(2, "0") }.join(":")
+  end
+
+  def component(name, **kwargs, &block)
+    component_class = "#{name.camelize}::Component".constantize
+    render(component_class.new(**kwargs), &block)
+  end
+
+  def component_collection(name, collection, **kwargs)
+    component_class = "#{name.camelize}::Component".constantize
+
+    render component_class.with_collection(collection, **kwargs)
   end
 end

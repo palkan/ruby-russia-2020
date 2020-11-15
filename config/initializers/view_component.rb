@@ -4,6 +4,15 @@ ActiveSupport.on_load(:view_component) do
   Rails.application.config.to_prepare do
     ViewComponentsController.class_eval do
       include Authenticated
+      include PlayerTracked
+
+      around_action :nullify_current_user
+
+      private
+
+      def nullify_current_user
+        with_current_user(nil) { yield }
+      end
     end
   end
 

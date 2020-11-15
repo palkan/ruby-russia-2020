@@ -1,0 +1,10 @@
+.artist-header
+  - if artist.image_large
+    .artist-header--image
+      = image_tag artist.image_large
+  .artist-header--info
+    h1 =artist.name
+    - if artist.tags.present?
+      div
+        - artist.tags.each do |tag|
+          span.meta =tag

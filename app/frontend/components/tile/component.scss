@@ -1,0 +1,63 @@
+.tile {
+  @apply p-2 mx-1 border-white border-2 cursor-pointer w-40 flex-shrink-0;
+
+  &:hover {
+    @apply border-secondary;
+  }
+
+  &--content {
+    @apply flex flex-col relative;
+  }
+
+  &--controls-container {
+    @apply absolute w-full h-32 flex justify-center;
+  }
+
+  &--controls {
+    @apply invisible bg-secondary bg-opacity-50 w-full flex justify-center;
+  }
+
+  &--controls > a {
+    @apply self-center transition-opacity opacity-75;
+
+    &:hover {
+      @apply opacity-100;
+    }
+
+    & > svg {
+      @apply w-16 h-16;
+    }
+  }
+
+  &--cover {
+    @apply h-32 mb-1;
+
+    &:hover .tile--controls {
+      @apply visible;
+    }
+  }
+
+  &--image {
+    @apply h-full w-full bg-gray-200;
+
+    & > img {
+      @apply h-full w-full object-cover;
+    }
+  }
+
+  &--title {
+    @apply text-base truncate;
+  }
+
+  &--author {
+    @apply text-gray-600 text-sm truncate;
+  }
+}
+
+.tiles-row {
+  @apply -mx-3 pt-2 overflow-x-scroll flex-row flex relative;
+}
+
+.tiles-grid {
+  @apply -mx-3 pt-2 flex flex-wrap relative;
+}

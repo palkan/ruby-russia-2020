@@ -16,4 +16,6 @@ class Track < ApplicationRecord
   after_destroy do
     Artist.decrement_counter(:tracks_count, album.artist_id)
   end
+
+  scope :ordered, -> { order(position: :asc) }
 end

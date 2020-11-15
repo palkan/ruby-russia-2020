@@ -3,7 +3,10 @@
 class ApplicationViewComponentPreview < ViewComponent::Preview
   self.abstract_class = true
 
+  DEFAULT_TEMPLATE = "layouts/view_components/preview"
+
   include Dry::Effects.State(:current_user)
+  include Dry::Effects.State(:current_track)
 
   class << self
     attr_accessor :default_locals
@@ -11,7 +14,11 @@ class ApplicationViewComponentPreview < ViewComponent::Preview
     def preview_example_template_path(*)
       super
     rescue ViewComponent::PreviewTemplateError
-      "layouts/view_components/preview"
+      preview_template_name = preview_name + "_preview"
+
+      default_component_template = preview_paths.first.join("#{preview_template_name}.html.slim")
+
+      default_component_template.file? ? preview_template_name : DEFAULT_TEMPLATE
     end
 
     def render_args(*)

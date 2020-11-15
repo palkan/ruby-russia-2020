@@ -1,0 +1,13 @@
+.tile
+  .tile--content
+    .tile--cover
+      - if current_user
+        .tile--controls-container
+          .tile--controls
+            = mock_link_to do
+              = inline_svg "icons/solid/play"
+      .tile--image
+        = image_tag cover_url if cover_url
+
+    = link_to title, title_link, title: title, class: "tile--title"
+    = link_to author, author_link, title: author, class: "tile--author"
