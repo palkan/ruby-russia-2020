@@ -8,7 +8,11 @@ gem "pg", "~> 1.0"
 gem "puma", "~> 5.0"
 gem "webpacker"
 
+gem "dry-effects", "~> 0.1.5"
+gem "dry-initializer", "~> 3.0"
+
 gem "slim"
+gem "view_component"
 
 gem "bcrypt", "~> 3.1.7"
 

@@ -36,28 +36,6 @@
   }
 }
 
-.nav {
-  height: 70px;
-
-  @apply bg-secondary w-full border-b border-gray-300 flex items-center justify-between absolute top-0;
-
-  &--left {
-    @apply ml-4 flex flex-grow;
-  }
-
-  &--right {
-    @apply mx-4;
-  }
-
-  &--logo {
-    @apply flex h-full items-center self-start;
-  }
-
-  &--search {
-    @apply ml-4 flex items-center flex-grow max-w-md;
-  }
-}
-
 .input {
   @apply p-1 w-full rounded border border-gray-300;
 

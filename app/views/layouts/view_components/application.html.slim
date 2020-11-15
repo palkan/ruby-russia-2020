@@ -1,0 +1,8 @@
+- content_for :content do
+  nav.px-4.flex.items-center.h-10.bg-gray-200.border-bottom.border-gray-300
+    = link_to "↫ back to all previews", "/rails/view_components"
+
+  .container.h-full.mt-4
+    = yield
+
+= render template: 'layouts/core'

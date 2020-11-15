@@ -1,0 +1,18 @@
+sl-dropdown
+  = mock_link_to slot: "trigger" do
+    span =current_user.username
+    = inline_svg "icons/user"
+  sl-menu
+    sl-menu-item
+      = link_to "#" do
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
+        span =t("nav.my_favourites")
+    sl-menu-item
+      = form_tag logout_path, method: :delete do
+        = mock_link_to do
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>
+          = button_tag t("nav.logout"), type: :submit

@@ -30,6 +30,8 @@ TestProf.activate("LOG", "all") do
 end
 
 require "rspec/rails"
+require "capybara/rspec"
+require "view_component/test_helpers"
 
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -39,6 +41,10 @@ RSpec.configure do |config|
 
   # See https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+
+  config.define_derived_metadata(file_path: %r{/spec/frontend/components}) do |metadata|
+    metadata[:type] = :view_component
+  end
 
   config.define_derived_metadata(file_path: %r{/spec/}) do |metadata|
     # do not overwrite type if it's already set
@@ -52,12 +58,18 @@ RSpec.configure do |config|
     config.filter_rails_from_backtrace!
 
     # Request/Rack middlewares
-    config.filter_gems_from_backtrace "railties", "rack", "rack-test"
+    config.filter_gems_from_backtrace "railties", "rack", "rack-test", "capybara"
   end
 
   # Add `travel_to`
   # See https://andycroll.com/ruby/replace-timecop-with-rails-time-helpers-in-rspec/
   config.include ActiveSupport::Testing::TimeHelpers
+
+  # Add #with_current_user effect handler
+  config.include Dry::Effects::Handler.Reader(:current_user)
+
+  config.include ViewComponent::TestHelpers, type: :view_component
+  config.include Capybara::RSpecMatchers, type: :view_component
 
   config.after do
     # Make sure every example starts with the current time
