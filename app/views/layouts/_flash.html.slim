@@ -1,0 +1,5 @@
+.fixed.right-0.mr-4.top-0.mt-4#flash
+  - if flash[:notice]
+    sl-alert type="success" duration="3000" open=true closable=true =flash[:notice]
+  - if flash[:alert]
+    sl-alert type="danger" duration="3000" open=true closable=true =flash[:alert]
