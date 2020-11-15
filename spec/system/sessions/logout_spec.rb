@@ -13,7 +13,11 @@ describe "Log in" do
     within "nav" do
       expect(page).to have_text "Матроскин"
 
-      click_on "Выйти"
+      click_on "Матроскин"
+
+      within ".nav--right sl-dropdown" do
+        click_button "Выйти"
+      end
 
       expect(page).to have_text "Войти"
       expect(page).not_to have_text "Матроскин", wait: 0

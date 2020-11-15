@@ -2,6 +2,9 @@ ru:
   nav:
     login: Войти
     logout: Выйти
+    my_favourites: Моя любовь
+    placeholder:
+      search: "Поиск по библиотеке..."
   artists:
     show:
       albums: Альбомы
@@ -18,3 +21,4 @@ ru:
       login: "Войти"
       placeholder:
         username: "Введите имя пользователя"
+        password: "Введите пароль"

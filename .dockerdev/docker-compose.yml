@@ -11,7 +11,7 @@ x-app: &app
       YARN_VERSION: '1.13.0'
       BUNDLER_VERSION: '2.1.2'
   environment: &env
-    NODE_ENV: development
+    NODE_ENV: ${NODE_ENV:-development}
     RAILS_ENV: ${RAILS_ENV:-development}
     YARN_CACHE_FOLDER: ${PWD}/node_modules/.yarn-cache
     BOOTSNAP_CACHE_DIR: /usr/local/bundle/_bootsnap

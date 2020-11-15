@@ -3,8 +3,9 @@
 class SessionsController < ApplicationController
   before_action :redirect_logged_in, only: [:new, :create], if: :logged_in?
 
+  layout "core"
+
   def new
-    render layout: "core"
   end
 
   def create

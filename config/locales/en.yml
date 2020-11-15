@@ -2,6 +2,10 @@ en:
   nav:
     login: Log in
     logout: Log out
+    my_favourites: My favourites
+    placeholder:
+      search: "Search library..."
+
   artists:
     show:
       albums: Albums
@@ -18,3 +22,4 @@ en:
       login: "Log in"
       placeholder:
         username: "Enter username"
+        password: "Type password"

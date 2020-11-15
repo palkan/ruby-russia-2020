@@ -1,12 +1,45 @@
 - content_for :content do
-  nav
-    - if logged_in?
-      = form_tag logout_path, method: :delete do
-        span> =current_user.username
-        = button_tag t("nav.logout"), type: :submit
-    - else
-      = link_to t("nav.login"), login_path
-  .main
+  nav.nav
+    .nav--left
+      .nav--logo
+        <svg height="50px" viewBox="0 0 490 340" xmlns="http://www.w3.org/2000/svg">
+          <path transform="translate(50)" fill="#EF303B" fill-rule="evenodd" d="M.184 110.612L110.388 0h220.408L441 110.612 220.592 331.837z"/>
+          <g fill="none" fill-rule="evenodd">
+            <path fill="#231F20" d="M71.15 201.225l166.639 64.27v70.303l-166.64-64.222v57.101H0V0h71.15v201.225z"/><path fill="#1538CF" d="M0 0l.204 62.737h176.518L.204 171.102l72.76 30.656L243.162 95.13V0z"/>
+          </g>
+        </svg>
+      form.nav--search
+        input.input type="text" placeholder=t("nav.placeholder.search")
+    .nav--right
+      - if logged_in?
+        sl-dropdown
+          = mock_link_to slot: "trigger" do
+            span =current_user.username
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          sl-menu
+            sl-menu-item
+              = link_to "#" do
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+                span =t("nav.my_favourites")
+            sl-menu-item
+              = form_tag logout_path, method: :delete do
+                = mock_link_to do
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                  </svg>
+                  = button_tag t("nav.logout"), type: :submit
+      - else
+        = link_to login_path do
+          span =t("nav.login")
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+          </svg>
+
+  .main.container.h-full.p-4
     = yield
 
 = render template: 'layouts/core'
