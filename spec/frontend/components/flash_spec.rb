@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-fdescribe Flash::Component do
+describe Flash::Component do
   let(:options) { {body: "Test"} }
   let(:component) { Flash::Component.new(**options) }
 

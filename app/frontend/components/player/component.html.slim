@@ -7,16 +7,16 @@
   data-player-playing-class="player-playing"
   data-turbolinks-permanent=true
 ]
-  .player--timeline  data-action="click->player#seek"
+  .player--timeline data-action="click->player#seek"
     .player--timeline-progress data-player-target="progress"
   .player--controls
-    = mock_link_to class: "player-btn" do
+    = mock_link_to class: "player-btn player--prev-btn #{'player--disabled-btn' if prev_track.blank?}", data: reflex_play_data(prev_track) do
       = inline_svg "icons/solid/rewind"
     = mock_link_to class: "player-btn player-btn-large player--play-btn", data: {action: "player#play"} do
       = inline_svg "icons/solid/play_outline"
     = mock_link_to class: "player-btn player-btn-large player--pause-btn", data: {action: "player#pause"} do
       = inline_svg "icons/solid/pause_outline"
-    = mock_link_to class: "player-btn" do
+    = mock_link_to class: "player-btn player--next-btn #{'player--disabled-btn' if next_track.blank?}", data: reflex_play_data(next_track) do
       = inline_svg "icons/solid/forward"
   .player--track
     - if cover

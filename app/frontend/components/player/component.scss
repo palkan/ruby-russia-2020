@@ -91,4 +91,8 @@
       @apply hidden;
     }
   }
+
+  &--disabled-btn {
+    @apply opacity-25;
+  }
 }
