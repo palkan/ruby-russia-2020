@@ -10,13 +10,13 @@
   .player--timeline  data-action="click->player#seek"
     .player--timeline-progress data-player-target="progress"
   .player--controls
-    = mock_link_to class: "player-btn" do
+    = mock_link_to class: "player-btn", data: {reflex: "click->Player#previous", track: track.id} do
       = inline_svg "icons/solid/rewind"
     = mock_link_to class: "player-btn player-btn-large player--play-btn", data: {action: "player#play"} do
       = inline_svg "icons/solid/play_outline"
     = mock_link_to class: "player-btn player-btn-large player--pause-btn", data: {action: "player#pause"} do
       = inline_svg "icons/solid/pause_outline"
-    = mock_link_to class: "player-btn" do
+    = mock_link_to class: "player-btn", data: {reflex: "click->Player#next", track: track.id} do
       = inline_svg "icons/solid/forward"
   .player--track
     - if cover

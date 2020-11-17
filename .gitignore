@@ -37,3 +37,5 @@ yarn-debug.log*
 .yarn-integrity
 
 /lefthook-local.yml
+
+.idea

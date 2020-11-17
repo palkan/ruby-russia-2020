@@ -19,4 +19,24 @@ class Track < ApplicationRecord
 
   scope :ordered, -> { order(position: :asc) }
   scope :popularity_ordered, -> { order(listenings_count: :desc) }
+
+  def previous
+    return self if first?
+
+    Track.find_by(album_id: album_id, position: position - 1)
+  end
+
+  def next
+    return self if last?
+
+    Track.find_by(album_id: album_id, position: position + 1)
+  end
+
+  def first?
+    position == 1
+  end
+
+  def last?
+    album.tracks_count == position
+  end
 end
