@@ -6,7 +6,7 @@ ul.tracks
           span.track--playing-indicator
         - else
           span.track--number--text ="#{i + 1}"
-          = mock_link_to class: "track--number--btn", data: {reflex: "click->Player#play", track: track.id} do
+          = mock_link_to class: "track--number--btn", data: {reflex: "click->Player#play", track: track.id, context: context} do
             = inline_svg "icons/play"
       = mock_link_to track.title, class: "track--title"
       span.track--actions

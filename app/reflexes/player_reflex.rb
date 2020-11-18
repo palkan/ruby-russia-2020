@@ -10,6 +10,7 @@ class PlayerReflex < ApplicationReflex
 
     self.current_track = track
     session[:track_id] = track.id
+    session[:play_list_type] = element.dataset["context"]
   end
 
   def pause
@@ -21,10 +22,11 @@ class PlayerReflex < ApplicationReflex
 
     self.current_track = nil
     session.delete(:track_id)
+    session.delete(:play_list_type)
   end
 
   def previous
-    track = current_track.previous
+    track = resolve_playlist(session[:play_list_type]).previous(current_track)
 
     return morph :nothing if current_track == track
 
@@ -33,11 +35,17 @@ class PlayerReflex < ApplicationReflex
   end
 
   def next
-    track = current_track.next
+    track = resolve_playlist(session[:play_list_type]).next(current_track)
 
     return morph :nothing if current_track == track
 
     self.current_track = track
     session[:track_id] = track.id
+  end
+
+  private
+
+  def resolve_playlist(context)
+    "Playlists::#{context.classify}".constantize
   end
 end

@@ -2,6 +2,7 @@
 
 class Tracks::List::Component < ApplicationViewComponent
   option :tracks
+  option :context
 
   def render?
     tracks.present?
