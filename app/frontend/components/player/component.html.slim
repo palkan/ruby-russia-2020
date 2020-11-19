@@ -7,16 +7,16 @@
   data-player-playing-class="player-playing"
   data-turbolinks-permanent=true
 ]
-  .player--timeline  data-action="click->player#seek"
+  .player--timeline data-action="click->player#seek"
     .player--timeline-progress data-player-target="progress"
   .player--controls
-    = mock_link_to class: "player-btn" do
+    = mock_link_to class: "player-btn", data: { action: "player#rewind", reflex: "click->Player#rewind", track: track.id } do
       = inline_svg "icons/solid/rewind"
-    = mock_link_to class: "player-btn player-btn-large player--play-btn", data: {action: "player#play"} do
+    = mock_link_to class: "player-btn player-btn-large player--play-btn", data: { action: "player#play" } do
       = inline_svg "icons/solid/play_outline"
-    = mock_link_to class: "player-btn player-btn-large player--pause-btn", data: {action: "player#pause"} do
+    = mock_link_to class: "player-btn player-btn-large player--pause-btn", data: { action: "player#pause" } do
       = inline_svg "icons/solid/pause_outline"
-    = mock_link_to class: "player-btn" do
+    = mock_link_to class: "player-btn", data: { action: "player#forward", reflex: "click->Player#forward", track: track.id} do
       = inline_svg "icons/solid/forward"
   .player--track
     - if cover
@@ -30,4 +30,4 @@
   .player--timestamps
     span.player--current-time data-player-target="time" 00:00
     span &nbsp;/&nbsp;
-    span =duration
+    span = duration

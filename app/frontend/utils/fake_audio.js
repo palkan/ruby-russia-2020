@@ -24,6 +24,14 @@ export default class {
     this.playing = false
   }
 
+  forward () {
+    if (this.playing) clearInterval(this.tickTid)
+  }
+
+  rewind () {
+    if (this.playing) clearInterval(this.tickTid)
+  }
+
   seek (value) {
     this.currentTime = value
     this.dispatch('timeupdate')
