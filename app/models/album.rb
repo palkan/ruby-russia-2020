@@ -2,6 +2,7 @@
 
 class Album < ApplicationRecord
   include HasImages
+  include Search
 
   has_many :tracks, dependent: :destroy
   belongs_to :artist, counter_cache: true

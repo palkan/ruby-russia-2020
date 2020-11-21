@@ -15,6 +15,7 @@ ru:
       new_releases: "Новые релизы"
       history: "История прослушивания"
       popular: "Популярные альбомы"
+      search_album: "Поиск по альбомам библиотеки"
     albums:
       header:
         tracks: "%{count} треков"

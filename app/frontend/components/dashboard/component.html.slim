@@ -6,6 +6,12 @@
   .tiles-row#new
     = component_collection "albums/tile", Album.ordered.preload(:artist).limit(10)
 
+  - if Album.search?(params[:search])
+    h2.mt-4 #{t(".search_album")} "#{params[:search]}"
+
+    .tiles-row#search_album
+      = component_collection "albums/tile", Album.search(params[:search]).limit(10)
+
   - if current_user
     h2.mt-4 =t(".history")
 
