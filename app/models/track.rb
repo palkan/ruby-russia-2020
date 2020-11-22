@@ -19,4 +19,10 @@ class Track < ApplicationRecord
 
   scope :ordered, -> { order(position: :asc) }
   scope :popularity_ordered, -> { order(listenings_count: :desc) }
+
+  def self.favorites(user_id)
+    where(id: Favorite
+                .where(user_id: user_id, album_id: nil)
+                .where('track_id is not null').select('track_id as id'))
+  end
 end

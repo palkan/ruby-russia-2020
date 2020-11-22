@@ -1,7 +1,7 @@
 .album-info
   .album-header
     .flex.flex-row.justify-between
-      h2 =album.title
+      h2 = album.title
       - if current_user
         .flex.items-center.flex-grow-0
           - if playing?
@@ -11,16 +11,15 @@
             = mock_link_to class: "icon-btn" do
               = inline_svg "icons/play"
 
-          - if liked?
-            = mock_link_to class: "icon-btn" do
+          = mock_link_to class: "icon-btn", data: { reflex: "click->FavoriteReflex#invert", controller: "stimulus-reflex", album: album.id, user: current_user.id } do
+            - if liked?
               = inline_svg "icons/solid/heart"
-          - else
-            = mock_link_to class: "icon-btn" do
+            - else
               = inline_svg "icons/heart"
     h4
       = link_to artist.name, artist_path(artist)
 
   .album-meta
-    span.meta =album.year
-    span.meta =t(".tracks", count: album.tracks_count)
-    span.meta =seconds_to_duration(total_duration)
+    span.meta = album.year
+    span.meta = t(".tracks", count: album.tracks_count)
+    span.meta = seconds_to_duration(total_duration)

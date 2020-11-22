@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resource :dashboard, only: [:show]
   resources :artists, only: [:show]
+  resources :favorites, only: [:index]
 
   root to: "dashboard#show"
 end
