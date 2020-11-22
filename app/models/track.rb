@@ -7,7 +7,7 @@ class Track < ApplicationRecord
 
   has_many :listenings, dependent: :destroy
 
-  validates :title, length: {maximum: 255}
+  validates :title, length: { maximum: 255 }
 
   after_create do
     Artist.increment_counter(:tracks_count, album.artist_id)
@@ -24,5 +24,14 @@ class Track < ApplicationRecord
     where(id: Favorite
                 .where(user_id: user_id, album_id: nil)
                 .where('track_id is not null').select('track_id as id'))
+  end
+
+  # использование
+  #  tracks.join_favorites(current_user&.id)
+  # потом можно:
+  #  track.favorite?
+  def self.join_favorites(user_id)
+    joins("LEFT JOIN favorites f ON tracks.id = f.track_id AND f.album_id is null AND f.user_id = #{user_id.to_i}")
+      .select('*, f.id AS favorite')
   end
 end
