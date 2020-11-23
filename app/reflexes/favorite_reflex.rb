@@ -7,7 +7,6 @@ class FavoriteReflex < ApplicationReflex
     album_id = element.dataset["album"]
 
     Favorite.invert(user_id: user_id, album_id: album_id, track_id: track_id)
-    #  todo: toggle class of button
   end
 
 end

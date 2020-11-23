@@ -10,7 +10,7 @@ ul.tracks
             = inline_svg "icons/play"
       = mock_link_to track.title, class: "track--title"
       span.track--actions
-        = mock_link_to data: { reflex: "click->FavoriteReflex#invert", controller: "stimulus-reflex", track: track.id, user: current_user.id } do
+        = mock_link_to data: { reflex: "click->FavoriteReflex#invert", track: track.id, user: current_user.id } do
           - if track.favorite?
             = inline_svg "icons/solid/heart"
           - else

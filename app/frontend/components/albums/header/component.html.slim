@@ -12,7 +12,7 @@
               = inline_svg "icons/play"
 
           = mock_link_to class: "icon-btn", data: { reflex: "click->FavoriteReflex#invert", controller: "stimulus-reflex", album: album.id, user: current_user.id } do
-            - if liked?
+            - if current_user.favorite_album?(album)
               = inline_svg "icons/solid/heart"
             - else
               = inline_svg "icons/heart"
