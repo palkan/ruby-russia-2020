@@ -1,2 +1,7 @@
-form.nav--search
-  input.input type="text" placeholder=t("nav.placeholder.search")
+= form_tag root_path, method: :get, class: 'nav--search' do
+  = text_field_tag :search,
+          params[:search],
+          autocomplete: "off",
+          placeholder: t("nav.placeholder.search"),
+          class: "input",
+          data: {reflex: "keyup->Search#show"}
