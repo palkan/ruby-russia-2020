@@ -6,6 +6,7 @@ class Track < ApplicationRecord
   belongs_to :album, counter_cache: true
 
   has_many :listenings, dependent: :destroy
+  has_many :favorites, as: :like
 
   validates :title, length: { maximum: 255 }
 
