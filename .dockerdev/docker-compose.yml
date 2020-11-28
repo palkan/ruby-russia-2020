@@ -80,7 +80,7 @@ services:
     environment:
       PSQL_HISTFILE: /root/log/.psql_history
     ports:
-      - 5432
+      - 5434:5432
     healthcheck:
       test: pg_isready -U postgres -h 127.0.0.1
       interval: 5s

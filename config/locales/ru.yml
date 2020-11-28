@@ -15,6 +15,7 @@ ru:
       new_releases: "Новые релизы"
       history: "История прослушивания"
       popular: "Популярные альбомы"
+      search_album: "Поиск по альбомам библиотеки"
     albums:
       header:
         tracks: "%{count} треков"
@@ -22,6 +23,10 @@ ru:
       tracks: Треки
       albums: Альбомы
       info: Информация
+    favorites:
+      title: "Моя любовь"
+      albums: "Альбомы"
+      tracks: "Треки"
   sessions:
     new:
       title: "Назови мне своё имя"

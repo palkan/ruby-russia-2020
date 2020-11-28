@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_09_180101) do
+ActiveRecord::Schema.define(version: 2020_11_21_204909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,16 @@ ActiveRecord::Schema.define(version: 2020_11_09_180101) do
     t.string "tags", default: [], null: false, array: true
     t.index ["name"], name: "index_artists_on_name", unique: true
     t.index ["tags"], name: "index_artists_on_tags", using: :gin
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "like_type"
+    t.bigint "like_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["like_type", "like_id"], name: "index_favorites_on_like"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -78,6 +88,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_180101) do
   end
 
   add_foreign_key "albums", "artists"
+  add_foreign_key "favorites", "users"
   add_foreign_key "listenings", "tracks"
   add_foreign_key "listenings", "users"
   add_foreign_key "tracks", "albums"

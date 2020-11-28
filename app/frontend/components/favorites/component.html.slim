@@ -1,0 +1,12 @@
+.mt-4
+  h1 = t(".title")
+
+  h2.mt-2 = t(".albums")
+
+  .tiles-row#albums
+    = component_collection "albums/tile", current_user.favorite_albums.preload(:artist).limit(10)
+
+  h2.mt-2 = t(".tracks")
+
+  .tiles-row#tracks
+    = component_collection "tracks/tile", current_user.favorite_tracks.preload(album: :artist).limit(10)

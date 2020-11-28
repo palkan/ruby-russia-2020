@@ -16,6 +16,6 @@ class Albums::Header::Component < ApplicationViewComponent
   end
 
   def liked?
-    false
+    Favorite.album?(current_user&.id, album&.id)
   end
 end

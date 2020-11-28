@@ -14,6 +14,6 @@ class Tracks::List::Component < ApplicationViewComponent
   end
 
   def liked?(track)
-    false
+    Favorite.track?(current_user&.id, track&.id)
   end
 end
