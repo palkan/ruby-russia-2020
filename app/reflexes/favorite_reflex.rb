@@ -3,10 +3,10 @@
 class FavoriteReflex < ApplicationReflex
   def invert
     user_id = element.dataset["user"]
-    track_id = element.dataset["track"]
-    album_id = element.dataset["album"]
+    like_type = element.dataset["like_type"]
+    like_id = element.dataset["like_id"]
 
-    Favorite.invert(user_id: user_id, album_id: album_id, track_id: track_id)
+    Favorite.invert(user_id: user_id, like_id: like_id, like_type: like_type)
   end
 
 end

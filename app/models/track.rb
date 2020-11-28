@@ -26,7 +26,7 @@ class Track < ApplicationRecord
   # потом:
   #  track.favorite?
   def self.join_favorites(user_id)
-    joins("LEFT JOIN favorites f ON tracks.id = f.track_id AND f.album_id is null AND f.user_id = #{user_id.to_i}")
+    joins("LEFT JOIN favorites f ON tracks.id = f.like_id AND f.user_id = #{user_id.to_i}")
       .select("tracks.*, f.id AS favorite")
   end
 end
