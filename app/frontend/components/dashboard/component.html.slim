@@ -1,11 +1,11 @@
 .mt-4
   h1 =t(".title")
 
-  - if Album.search?(params[:search])
-    h2.mt-4 #{t(".search_album")} "#{params[:search]}"
+  - if search && Album.search?(search)
+    h2.mt-4 #{t(".search_album")} "#{search}"
 
     .tiles-row#search_album
-      = component_collection "albums/tile", Album.search(params[:search]).limit(10)
+      = component_collection "albums/tile", Album.search(search).limit(10)
 
   h2.mt-2 =t(".new_releases")
 
