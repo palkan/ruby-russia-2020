@@ -5,7 +5,7 @@ import { secondsToDuration } from '../../utils/seconds_to_duration'
 export default class extends Controller {
   static targets = ['progress', 'time']
 
-  static classes = ['playing']
+  static classes = ['playing', 'forward', 'rewind']
 
   static values = {
     duration: Number,
